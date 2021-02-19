@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Toast Icon</string>
+    <string name="show_app_name">show app name</string>
+    <string name="text_color_follow_toast">text color follow Toast</string>
+    <string name="show_toast">show toast</string>
+</resources>

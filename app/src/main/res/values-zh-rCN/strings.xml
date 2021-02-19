@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Toast Icon</string>
+    <string name="show_app_name">显示应用名</string>
+    <string name="text_color_follow_toast">字体颜色跟随 Toast</string>
+    <string name="show_toast">显示 Toast</string>
+</resources>
