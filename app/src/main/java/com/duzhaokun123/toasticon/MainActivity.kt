@@ -13,20 +13,28 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
         val prefs = getSharedPreferences("prefs", MODE_PRIVATE)
 
-        val s1 = findViewById<Switch>(R.id.s_1)
-        val s2 = findViewById<Switch>(R.id.s_2)
-
-        s1.isChecked = prefs.getBoolean("show_app_name", false)
-        s1.setOnCheckedChangeListener { _, isChecked ->
-            prefs.edit().putBoolean("show_app_name", isChecked).apply()
+        findViewById<Switch>(R.id.s_1).apply {
+            isChecked = prefs.getBoolean("show_app_name", false)
+            setOnCheckedChangeListener { _, isChecked ->
+                prefs.edit().putBoolean("show_app_name", isChecked).apply()
+            }
         }
-        s2.isChecked = prefs.getBoolean("text_color_follow", true)
-        s2.setOnCheckedChangeListener { _, isChecked ->
-            prefs.edit().putBoolean("text_color_follow", isChecked).apply()
+        findViewById<Switch>(R.id.s_2).apply {
+            isChecked = prefs.getBoolean("text_color_follow", true)
+            setOnCheckedChangeListener { _, isChecked ->
+                prefs.edit().putBoolean("text_color_follow", isChecked).apply()
+            }
         }
-
-        findViewById<Button>(R.id.button).setOnClickListener {
+        findViewById<Button>(R.id.btn_1).setOnClickListener {
             Toast.makeText(this, "test toast", Toast.LENGTH_LONG).show()
+        }
+        findViewById<Button>(R.id.btn_2).setOnClickListener {
+            Thread {
+                Thread.sleep(5000)
+                runOnUiThread {
+                    Toast.makeText(this, "test toast", Toast.LENGTH_LONG).show()
+                }
+            }.start()
         }
     }
 }

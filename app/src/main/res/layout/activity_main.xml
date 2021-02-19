@@ -19,8 +19,14 @@
         android:text="@string/text_color_follow_toast" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/show_toast" />
+
+    <Button
+        android:id="@+id/btn_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show_toast_5s_later" />
 </LinearLayout>
