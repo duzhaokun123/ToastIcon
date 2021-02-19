@@ -4,7 +4,7 @@
 
 Add application icon on toast. (cannot work on application who's targetApi 30 or higher run on Android 11 or higher)
 
-# Thanks
+### Thanks
 [AOSP](https://source.android.com)
 
 [ButteredToast-revived](https://github.com/Noisyfox/ButteredToast-revived)

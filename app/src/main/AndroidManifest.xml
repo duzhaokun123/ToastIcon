@@ -33,7 +33,8 @@
         <provider
             android:name=".PreferenceProvider"
             android:authorities="com.duzhaokun123.toasticon.preferences"
-            android:exported="true" />
+            android:exported="true"
+            tools:ignore="ExportedContentProvider" />
     </application>
 
 </manifest>

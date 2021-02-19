@@ -3,26 +3,26 @@ package com.duzhaokun123.toasticon
 import android.app.Activity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Switch
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SwitchCompat
-import androidx.core.content.edit
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        setContentView(R.layout.activity_main)
+
         super.onCreate(savedInstanceState)
-        val prefs = getSharedPreferences("prefs", Activity.MODE_PRIVATE)
+        val prefs = getSharedPreferences("prefs", MODE_PRIVATE)
 
-        val sc1 = findViewById<SwitchCompat>(R.id.sc_1)
-        val sc2 = findViewById<SwitchCompat>(R.id.sc_2)
+        val s1 = findViewById<Switch>(R.id.s_1)
+        val s2 = findViewById<Switch>(R.id.s_2)
 
-        sc1.isChecked = prefs.getBoolean("show_app_name", false)
-        sc1.setOnCheckedChangeListener { _, isChecked ->
-            prefs.edit { putBoolean("show_app_name", isChecked) }
+        s1.isChecked = prefs.getBoolean("show_app_name", false)
+        s1.setOnCheckedChangeListener { _, isChecked ->
+            prefs.edit().putBoolean("show_app_name", isChecked).apply()
         }
-        sc2.isChecked = prefs.getBoolean("text_color_follow", true)
-        sc2.setOnCheckedChangeListener { _, isChecked ->
-            prefs.edit { putBoolean("text_color_follow", isChecked) }
+        s2.isChecked = prefs.getBoolean("text_color_follow", true)
+        s2.setOnCheckedChangeListener { _, isChecked ->
+            prefs.edit().putBoolean("text_color_follow", isChecked).apply()
         }
 
         findViewById<Button>(R.id.button).setOnClickListener {
