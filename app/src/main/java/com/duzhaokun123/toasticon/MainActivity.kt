@@ -25,6 +25,12 @@ class MainActivity : Activity() {
                 prefs.edit().putBoolean("text_color_follow", isChecked).apply()
             }
         }
+        findViewById<Switch>(R.id.s_3).apply {
+            isChecked = prefs.getBoolean("add_name", true)
+            setOnClickListener {
+                prefs.edit().putBoolean("add_name", isChecked).apply()
+            }
+        }
         findViewById<Button>(R.id.btn_1).setOnClickListener {
             Toast.makeText(this, "test toast", Toast.LENGTH_LONG).show()
         }

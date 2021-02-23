@@ -5,4 +5,5 @@
     <string name="text_color_follow_toast">字体颜色跟随 Toast</string>
     <string name="show_toast">显示 Toast</string>
     <string name="show_toast_5s_later">显示 Toast 5s 延迟</string>
+    <string name="add_name">添加应用名如果无法添加图标</string>
 </resources>
