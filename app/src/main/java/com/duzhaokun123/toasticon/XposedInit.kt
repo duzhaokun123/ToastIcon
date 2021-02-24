@@ -42,6 +42,8 @@ class XposedInit : IXposedHookLoadPackage {
             beforeHookedMethod = before@{
                 val contentView = view
                 if (contentView != null) {
+                    if (contentView.tag == lpparam.packageName) return@before
+                    contentView.tag = lpparam.packageName
                     contentView.id = View.generateViewId()
                     val rlRoot = RelativeLayout(application)
                     rlRoot.addView(contentView)
