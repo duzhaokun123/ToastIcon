@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.ToastIcon"
-        tools:ignore="AllowBackup">
+        tools:ignore="AllowBackup,MissingApplicationIcon">
         <meta-data
             android:name="xposedmodule"
             android:value="true" />
@@ -17,7 +17,7 @@
             android:value="show toast icon" />
         <meta-data
             android:name="xposedminversion"
-            android:value="53" />
+            android:value="93" />
 
         <activity
             android:name=".MainActivity"
@@ -30,12 +30,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
-        <provider
-            android:name=".PreferenceProvider"
-            android:authorities="com.duzhaokun123.toasticon.preferences"
-            android:exported="true"
-            tools:ignore="ExportedContentProvider" />
     </application>
 
 </manifest>

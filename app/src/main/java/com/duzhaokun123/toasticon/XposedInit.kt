@@ -7,8 +7,8 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
-import com.crossbowffs.remotepreferences.RemotePreferences
 import de.robv.android.xposed.IXposedHookLoadPackage
+import de.robv.android.xposed.XSharedPreferences
 import de.robv.android.xposed.callbacks.XC_LoadPackage
 import io.ikws4.library.xposedktx.getObjectField
 import io.ikws4.library.xposedktx.hookMethod
@@ -23,16 +23,13 @@ class XposedInit : IXposedHookLoadPackage {
     private val pm by lazy { application.packageManager }
     private val icon by lazy { pm.getApplicationIcon(application.applicationInfo) }
     private val appName by lazy { pm.getApplicationLabel(application.applicationInfo) }
-
+    
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
-        if (lpparam.packageName == "android") return
-
         Application::class.java.hookMethod("onCreate",
             afterHookedMethod = {
                 application = this
-                val prefs = RemotePreferences(
-                    this, "com.duzhaokun123.toasticon.preferences", "prefs"
-                )
+                val prefs = XSharedPreferences(BuildConfig.APPLICATION_ID, "prefs")
+
                 showAppName = prefs.getBoolean("show_app_name", false)
                 textColorFollow = prefs.getBoolean("text_color_follow", true)
                 addName = prefs.getBoolean("add_name", true)

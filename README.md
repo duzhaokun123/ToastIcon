@@ -9,8 +9,6 @@ Add application icon on toast. (cannot work on application who's targetApi 30 or
 
 [ButteredToast-revived](https://github.com/Noisyfox/ButteredToast-revived)
 
-[RemotePreferences](https://github.com/apsun/RemotePreferences)
-
 [Xposed](https://forum.xda-developers.com/xposed)
 
 [xposed-ktx](https://github.com/ikws4/xposed-ktx)

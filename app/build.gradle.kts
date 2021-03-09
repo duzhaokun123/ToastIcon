@@ -11,10 +11,10 @@ android {
 
     defaultConfig {
         applicationId = "com.duzhaokun123.toasticon"
-        minSdk = 22
+        minSdk = 28
         targetSdk = 29
-        versionCode = 4
-        versionName = "0.1.3"
+        versionCode = 5
+        versionName = "0.1.4"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -43,7 +43,8 @@ android {
         }
     }
     packagingOptions {
-        exclude("META-INF/*.kotlin_module")
+        exclude("META-INF/**")
+        exclude("kotlin/**")
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -60,7 +61,4 @@ dependencies {
     // xposed
     compileOnly("de.robv.android.xposed:api:82")
     implementation("com.github.ikws4:xposed-ktx:1.0")
-
-    // remotePreference
-    implementation("com.crossbowffs.remotepreferences:remotepreferences:0.8")
 }
